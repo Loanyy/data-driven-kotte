@@ -28,16 +28,32 @@ namespace kotte
             static_cast<float>(map_.width() * tile_size_),
             static_cast<float>(map_.height() * tile_size_)}, spatial_cell_size_}
         , config_{config}{
+
+        //old code
+        /*
         input_.bind(Action::quit, {KEY_ESCAPE, KEY_Q});
         input_.bind(Direction::move,
             {KEY_UP, KEY_W},
             {KEY_DOWN, KEY_S},
             {KEY_LEFT, KEY_A},
             {KEY_RIGHT, KEY_D});
+        */
+
         // TODO: once move_up, move_down, move_left, move_right and quit are
         // read from config.input the same way Input's constructor already
         // reads place_bomb, these two bind() calls can move into Input's
         // constructor too and disappear from here.
+
+        input_.bind(Action::quit,
+            { key_from_name(config.input.quit) });
+
+        input_.bind(Direction::move,
+            { key_from_name(config.input.move_up) },
+            { key_from_name(config.input.move_down) },
+            { key_from_name(config.input.move_left) },
+            { key_from_name(config.input.move_right) });
+
+        //done, replaced hardcoded keys with config binds from json
 
         populate_entities();
         initialize_enemies();

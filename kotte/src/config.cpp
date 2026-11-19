@@ -11,14 +11,37 @@ namespace kotte
 {
     void from_json(const nlohmann::json& json, KeyBindings& bindings){
         json.at("place_bomb").get_to(bindings.place_bomb);
+
         // TODO: read move_up, move_down, move_left, move_right and quit the same way.
+
+
+        json.at("move_up").get_to(bindings.move_up);
+        json.at("move_down").get_to(bindings.move_down);
+        json.at("move_left").get_to(bindings.move_left);
+        json.at("move_right").get_to(bindings.move_right);
+        json.at("quit").get_to(bindings.quit);
+
+        //done, added 5 missing keys from json
+        // from_json reads values from json to c++, so we can use them in game
     }
 
     void to_json(nlohmann::json& json, const KeyBindings& bindings){
         json = nlohmann::json{
             {"place_bomb", bindings.place_bomb},
+
+            // TODO: write move_up, move_down, move_left, move_right and quit the same way.
+
+            { "move_up", bindings.move_up },
+            { "move_down", bindings.move_down },
+            { "move_left", bindings.move_left },
+            { "move_right", bindings.move_right },
+            { "quit", bindings.quit }
+
         };
-        // TODO: write move_up, move_down, move_left, move_right and quit the same way.
+
+        //done, again added 5 missing keys
+        // to_json converts the struct to json again, in case if config is broken or smth, this is creating json just in case.
+        // however write_config() writes into json, not to_json().
     }
 
     void from_json(const nlohmann::json& json, Config& config){

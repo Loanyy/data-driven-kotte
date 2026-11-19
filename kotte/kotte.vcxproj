@@ -107,6 +107,7 @@
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
     <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\config.cpp" />
     <ClCompile Include="src\entity_store.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\renderer.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="include\kotte\entity.hpp" />
     <ClInclude Include="include\kotte\entity_handle.hpp" />
     <ClInclude Include="include\kotte\entity_store.hpp" />
+    <ClInclude Include="include\kotte\input.hpp" />
     <ClInclude Include="include\kotte\random.hpp" />
     <ClInclude Include="include\kotte\renderer.hpp" />
     <ClInclude Include="include\kotte\spatial_grid.hpp" />
@@ -163,6 +165,9 @@
     <ClInclude Include="..\vendor\json_schema_validator\src\json-patch.hpp" />
     <ClInclude Include="..\vendor\json_schema_validator\src\smtp-address-validator.hpp" />
     <ClInclude Include="..\vendor\json_schema_validator\src\nlohmann\json-schema.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
