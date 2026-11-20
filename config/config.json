@@ -1,13 +1,31 @@
 {
     "input": {
-        "move_down": ["S", "DOWN"],
-        "move_left": ["A", "LEFT"],
-        "move_right": ["D", "RIGHT"],
-        "move_up": ["W", "UP"],
-        "place_bomb": ["SPACE", "ENTER"],
-        "quit": ["Q", "ESCAPE"]
+        "move_down": [
+            "S",
+            "DOWN"
+        ],
+        "move_left": [
+            "A",
+            "LEFT"
+        ],
+        "move_right": [
+            "D",
+            "RIGHT"
+        ],
+        "move_up": [
+            "W",
+            "UP"
+        ],
+        "place_bomb": [
+            "SPACE",
+            "ENTER"
+        ],
+        "quit": [
+            "Q",
+            "ESCAPE"
+        ]
     },
     "seed": 323453473861,
     "tile_map_height": 13,
     "tile_map_width": 17
-}	
+}
