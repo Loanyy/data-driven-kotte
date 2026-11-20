@@ -3,16 +3,17 @@
 #include <cstdint>
 #include <nlohmann/json.hpp>
 #include <string>
+#include <vector>
 
 namespace kotte
 {
     struct KeyBindings {
-        std::string move_up;
-        std::string move_down;
-        std::string move_left;
-        std::string move_right;
-        std::string place_bomb;
-        std::string quit;
+        std::vector<std::string> move_up;
+        std::vector<std::string> move_down;
+        std::vector<std::string> move_left;
+        std::vector<std::string> move_right;
+        std::vector<std::string> place_bomb;
+        std::vector<std::string> quit;
     };
 
     struct Config {

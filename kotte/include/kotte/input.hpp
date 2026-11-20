@@ -13,6 +13,8 @@ namespace kotte
     // config_schema.json's key_name definition) to the matching raylib
     // KEY_* constant. Throws std::runtime_error for an unrecognized name.
     [[nodiscard]] int key_from_name(const std::string& name);
+    [[nodiscard]] std::vector<int> convert_keys(
+        const std::vector<std::string>& names);
 
     enum class Action {
         quit,

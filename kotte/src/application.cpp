@@ -45,13 +45,13 @@ namespace kotte
         // constructor too and disappear from here.
 
         input_.bind(Action::quit,
-            { key_from_name(config.input.quit) });
+            { convert_keys(config.input.quit) });
 
         input_.bind(Direction::move,
-            { key_from_name(config.input.move_up) },
-            { key_from_name(config.input.move_down) },
-            { key_from_name(config.input.move_left) },
-            { key_from_name(config.input.move_right) });
+            { convert_keys(config.input.move_up) },
+            { convert_keys(config.input.move_down) },
+            { convert_keys(config.input.move_left) },
+            { convert_keys(config.input.move_right) });
 
         //done, replaced hardcoded keys with config binds from json
 

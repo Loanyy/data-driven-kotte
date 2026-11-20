@@ -34,8 +34,19 @@ namespace kotte
         return it->second;
     }
 
+    std::vector<int> convert_keys(const std::vector<std::string>& names) {
+        std::vector<int> keys;
+
+        for (const auto& name : names) {
+            keys.push_back(key_from_name(name));
+        }
+
+        return keys;
+    }
+
+
     Input::Input(const Config& config){
-        bind(Action::place_bomb, {key_from_name(config.input.place_bomb)});
+        bind(Action::place_bomb, {convert_keys(config.input.place_bomb)});
         // TODO: bind quit and Direction::move from config.input the same way,
         // once Application stops binding them itself.
     }

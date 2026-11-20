@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "title": "Kotte config",
     "type": "object",
     "definitions": {
@@ -13,6 +13,12 @@
                 "SPACE", "ESCAPE", "ENTER", "TAB", "BACKSPACE",
                 "LEFT_SHIFT", "RIGHT_SHIFT", "LEFT_CONTROL", "RIGHT_CONTROL", "LEFT_ALT", "RIGHT_ALT"
             ]
+        },
+        "key_list": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/key_name" },
+            "minItems": 1,
+            "uniqueItems": true
         }
     },
     "properties": {
@@ -33,12 +39,12 @@
         "input": {
             "type": "object",
             "properties": {
-                "move_up": { "$ref": "#/definitions/key_name" },
-                "move_down": { "$ref": "#/definitions/key_name" },
-                "move_left": { "$ref": "#/definitions/key_name" },
-                "move_right": { "$ref": "#/definitions/key_name" },
-                "place_bomb": { "$ref": "#/definitions/key_name" },
-                "quit": { "$ref": "#/definitions/key_name" }
+                "move_up": { "$ref": "#/definitions/key_list" },
+                "move_down": { "$ref": "#/definitions/key_list" },
+                "move_left": { "$ref": "#/definitions/key_list" },
+                "move_right": { "$ref": "#/definitions/key_list" },
+                "place_bomb": { "$ref": "#/definitions/key_list" },
+                "quit": { "$ref": "#/definitions/key_list" }
             },
             "required": ["move_up", "move_down", "move_left", "move_right", "place_bomb", "quit"]
         }

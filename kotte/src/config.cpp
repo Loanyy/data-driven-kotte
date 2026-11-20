@@ -66,12 +66,12 @@ namespace kotte
             .tile_map_height = 13,
             .seed = 323453473861,
             .input = KeyBindings{
-                .move_up = "W",
-                .move_down = "S",
-                .move_left = "A",
-                .move_right = "D",
-                .place_bomb = "SPACE",
-                .quit = "Q"
+                .move_up = {"W"},
+                .move_down = {"S"},
+                .move_left = {"A"},
+                .move_right = {"D"},
+                .place_bomb = {"SPACE"},
+                .quit = {"Q"}
             }
         };
     }
